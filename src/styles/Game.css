@@ -13,6 +13,9 @@
   margin-bottom: 20px;
   font-size: 1.2em;
   font-weight: bold;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .game-info div {
@@ -20,37 +23,105 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  text-align: center;
+}
+
+.wave-button {
+  padding: 12px 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #e74c3c;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wave-button.ready {
+  background-color: #2ecc71;
+}
+
+.wave-button.ready:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wave-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .tower-selection {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tower-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
   background-color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9em;
+  min-width: 140px;
+  position: relative;
 }
 
 .tower-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #3498db;
 }
 
 .tower-button.selected {
-  background-color: #3498db;
-  color: white;
+  background-color: #f8f9fa;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px #3498db;
 }
 
 .tower-button:disabled {
-  opacity: 0.5;
+  opacity: 0.7;
   cursor: not-allowed;
+  background-color: #f8f9fa;
+}
+
+.tower-button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.tower-info {
+  text-align: center;
+}
+
+.tower-name {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.tower-cost {
+  color: #7f8c8d;
+  font-size: 0.8em;
 }
 
 .game-canvas {

@@ -2,7 +2,7 @@ import { Cactus, Position } from './types';
 
 export class WaveManager {
   private readonly baseHealth = 100;
-  private readonly baseSpeed = 1;
+  private readonly baseSpeed = 0.5;
   private readonly baseReward = 25;
   private readonly waveCooldown = 5000; // 5 seconds between waves
   private readonly spawnCooldown = 1000; // 1 second between spawns
@@ -45,7 +45,7 @@ export class WaveManager {
 
   private spawnCactus(waveNumber: number): void {
     const healthMultiplier = 1 + (waveNumber - 1) * 0.2; // 20% increase per wave
-    const speedMultiplier = 1 + (waveNumber - 1) * 0.1;  // 10% increase per wave
+    const speedMultiplier = 1 + (waveNumber - 1) * 0.05;  // Reduced from 0.1 to 0.05 (5% increase per wave)
     const rewardMultiplier = 1 + (waveNumber - 1) * 0.15; // 15% increase per wave
 
     const cactus: Cactus = {
